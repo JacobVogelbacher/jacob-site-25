@@ -14,8 +14,23 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply text-fg bg-bg;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  h1 {
+    @apply text-7xl;
+  }
+}
+
+@layer components {
+  .cell {
+    @apply mx-12 lg:mx-20;
+  }
+
+  .content-grid {
+    @apply grid grid-cols-12 gap-4;
+  }
 }

@@ -1,65 +1,84 @@
 import Image from 'next/image'
+import { Linkedin } from '@/components/icons/linkedin'
+import { Github } from '@/components/icons/github'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{' '}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <div className="cell">
+        <div className="content-grid">
+          <header className="col-span-full flex flex-col justify-between gap-10 lg:col-span-5 lg:sticky lg:top-0 lg:left-0 lg:h-dvh">
+            <div>
+              <h1>Jacob Vogelbacher</h1>
+              <p>Full-stack Engineer</p>
+            </div>
+            <div className="flex gap-4 items-center">
+              <a
+                href="https://www.linkedin.com/in/jacobvogelbacher/"
+                target="_blank"
+              >
+                <Linkedin />
+              </a>
+              <a href="https://github.com/JacobVogelbacher/" target="_blank">
+                <Github />
+              </a>
+            </div>
+          </header>
+          <main className="col-span-full lg:col-span-7">
+            <section>
+              <h2>Tech</h2>
+              <p>What I've been working on recently</p>
+              <ul>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Next.js</li>
+                <li>Tailwind</li>
+                <li>Supabase</li>
+                <li>Sanity</li>
+                <li>WordPress</li>
+                <li>Cypress</li>
+              </ul>
+            </section>
+            <section>
+              <h2>Work</h2>
+              <ul>
+                <li>
+                  <a href="#">ORA Portal</a>
+                </li>
+                <li>
+                  <a href="#">ORA Marketing</a>
+                </li>
+                <li>
+                  <a href="#">FCR</a>
+                </li>
+                <li>
+                  <a href="#">CTR</a>
+                </li>
+                <li>
+                  <a href="#">TLC</a>
+                </li>
+                <li>
+                  <a href="#">RKC</a>
+                </li>
+                <li>
+                  <a href="#">Personal Site</a>
+                </li>
+              </ul>
+            </section>
+            <section>
+              <h2>Experience</h2>
+              <ul>
+                <li>
+                  <a href="#">BV - Sr Dev</a>
+                </li>
+                <li>
+                  <a href="#">Etc.</a>
+                </li>
+              </ul>
+            </section>
+          </main>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   )
 }
