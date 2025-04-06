@@ -39,6 +39,7 @@ export default function Home() {
               <ul className="grid gap-4 md:grid-cols-3">
                 {tech.map(t => (
                   <li key={t.name}>
+                    {/* // TODO: maybe use the Card component for these as well */}
                     <Box>{t.name}</Box>
                   </li>
                 ))}
