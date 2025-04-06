@@ -4,12 +4,13 @@ import { Github } from '@/components/icons/github'
 import data from './data.json'
 import { Card } from '@/components/ui/card'
 import { Box } from '@/components/ui/box'
+import { DotBg } from '@/components/dot-bg'
 
 export default function Home() {
   const { tech, work } = data
 
   return (
-    <div>
+    <DotBg>
       <div className="cell">
         <div className="content-grid gap-y-12">
           <header className="col-span-full flex flex-col justify-between gap-10 pt-10 lg:sticky lg:top-0 lg:left-0 lg:col-span-6 lg:h-dvh lg:py-16">
@@ -69,6 +70,6 @@ export default function Home() {
           </main>
         </div>
       </div>
-    </div>
+    </DotBg>
   )
 }

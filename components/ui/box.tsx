@@ -6,7 +6,7 @@ export const Box = ({
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className="relative flex aspect-[2/1] items-center justify-center rounded-lg border border-gray-800 p-4"
+      className="relative flex aspect-[2/1] items-center justify-center rounded-lg border border-gray-800 bg-gray-950 p-4"
       {...props}
     >
       <GlowingEffect
