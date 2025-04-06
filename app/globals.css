@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-bg: var(--background);
-  --color-fg: var(--foreground);
+  /* --color-bg: var(--background);
+  --color-fg: var(--foreground); */
 }
 
 /*
@@ -37,7 +37,7 @@
 }
 
 @layer utilities {
-  :root {
+  /* :root {
     --background: #ffffff;
     --foreground: #171717;
   }
@@ -47,12 +47,12 @@
       --background: #0a0a0a;
       --foreground: #ededed;
     }
-  }
+  } */
 }
 
 @layer base {
   body {
-    @apply text-fg bg-bg;
+    @apply bg-gray-950 text-gray-50;
     font-family: Arial, Helvetica, sans-serif;
   }
 
