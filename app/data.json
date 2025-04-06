@@ -1,0 +1,58 @@
+{
+  "tech": [
+    {
+      "name": "React"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "Next.js"
+    },
+    {
+      "name": "Tailwind"
+    },
+    {
+      "name": "Supabase"
+    },
+    {
+      "name": "Sanity"
+    },
+    {
+      "name": "WordPress"
+    },
+    {
+      "name": "Cypress"
+    }
+  ],
+  "work": [
+    {
+      "name": "ORA Portal",
+      "url": "#!"
+    },
+    {
+      "name": "ORA Marketing",
+      "url": "#!"
+    },
+    {
+      "name": "FCR",
+      "url": "#!"
+    },
+    {
+      "name": "CTR",
+      "url": "#!"
+    },
+    {
+      "name": "TLC",
+      "url": "#!"
+    },
+    {
+      "name": "RKC",
+      "url": "#!"
+    },
+    {
+      "name": "Personal Site",
+      "url": "#!"
+    }
+  ]
+}

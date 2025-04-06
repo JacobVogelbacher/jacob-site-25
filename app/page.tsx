@@ -1,8 +1,13 @@
 import Image from 'next/image'
 import { Linkedin } from '@/components/icons/linkedin'
 import { Github } from '@/components/icons/github'
+import data from './data.json'
+import { Card } from '@/components/ui/card'
 
 export default function Home() {
+  const tech = data.tech
+  const work = data.work
+
   return (
     <div>
       <div className="cell">
@@ -27,47 +32,30 @@ export default function Home() {
             </div>
           </header>
           <main className="col-span-full flex flex-col gap-10 pb-10 lg:col-span-6 lg:py-16">
-            <section>
+            <section className="flex flex-col gap-4">
               <h2>Tech</h2>
               <p>What I've been working with recently</p>
-              <ul>
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>Next.js</li>
-                <li>Tailwind</li>
-                <li>Supabase</li>
-                <li>Sanity</li>
-                <li>WordPress</li>
-                <li>Cypress</li>
+              <ul className="grid grid-cols-3 gap-4">
+                {tech.map(t => (
+                  <li key={t.name}>
+                    <Card>{t.name}</Card>
+                  </li>
+                ))}
               </ul>
             </section>
-            <section>
+            <section className="flex flex-col gap-4">
               <h2>Work</h2>
-              <ul>
-                <li>
-                  <a href="#">ORA Portal</a>
-                </li>
-                <li>
-                  <a href="#">ORA Marketing</a>
-                </li>
-                <li>
-                  <a href="#">FCR</a>
-                </li>
-                <li>
-                  <a href="#">CTR</a>
-                </li>
-                <li>
-                  <a href="#">TLC</a>
-                </li>
-                <li>
-                  <a href="#">RKC</a>
-                </li>
-                <li>
-                  <a href="#">Personal Site</a>
-                </li>
+              <ul className="flex flex-col gap-4">
+                {work.map(w => (
+                  <li key={w.name}>
+                    <Card>
+                      <a href={w.url}>{w.name}</a>
+                    </Card>
+                  </li>
+                ))}
               </ul>
             </section>
-            <section>
+            <section className="flex flex-col gap-4">
               <h2>Experience</h2>
               <ul>
                 <li>
