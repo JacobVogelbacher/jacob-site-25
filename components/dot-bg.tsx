@@ -102,7 +102,7 @@ export const DotBg = ({
       />
 
       {/* gradient overlay, so the effect isn't as visible on the right side of viewport */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-950" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-950 to-75%" />
 
       <div className={cn('relative z-20', className)}>{children}</div>
     </div>
