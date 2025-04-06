@@ -7,12 +7,12 @@ export default function Home() {
     <div>
       <div className="cell">
         <div className="content-grid">
-          <header className="col-span-full flex flex-col justify-between gap-10 lg:col-span-5 lg:sticky lg:top-0 lg:left-0 lg:h-dvh">
+          <header className="col-span-full flex flex-col justify-between gap-10 lg:sticky lg:top-0 lg:left-0 lg:col-span-5 lg:h-dvh">
             <div>
               <h1>Jacob Vogelbacher</h1>
               <p>Full-stack Engineer</p>
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex items-center gap-4">
               <a
                 href="https://www.linkedin.com/in/jacobvogelbacher/"
                 target="_blank"
