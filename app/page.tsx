@@ -5,8 +5,7 @@ import data from './data.json'
 import { Card } from '@/components/ui/card'
 
 export default function Home() {
-  const tech = data.tech
-  const work = data.work
+  const { tech, work } = data
 
   return (
     <div>
