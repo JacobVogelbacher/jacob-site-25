@@ -6,10 +6,12 @@ export default function Home() {
   return (
     <div>
       <div className="cell">
-        <div className="content-grid">
-          <header className="col-span-full flex flex-col justify-between gap-10 lg:sticky lg:top-0 lg:left-0 lg:col-span-5 lg:h-dvh">
-            <div>
-              <h1>Jacob Vogelbacher</h1>
+        <div className="content-grid gap-y-12">
+          <header className="col-span-full flex flex-col justify-between gap-10 pt-10 lg:sticky lg:top-0 lg:left-0 lg:col-span-6 lg:h-dvh lg:py-16">
+            <div className="flex flex-col gap-8">
+              <h1>
+                Jacob <br /> Vogelbacher
+              </h1>
               <p>Full-stack Engineer</p>
             </div>
             <div className="flex items-center gap-4">
@@ -24,10 +26,10 @@ export default function Home() {
               </a>
             </div>
           </header>
-          <main className="col-span-full lg:col-span-7">
+          <main className="col-span-full flex flex-col gap-10 pb-10 lg:col-span-6 lg:py-16">
             <section>
               <h2>Tech</h2>
-              <p>What I've been working on recently</p>
+              <p>What I've been working with recently</p>
               <ul>
                 <li>React</li>
                 <li>TypeScript</li>
