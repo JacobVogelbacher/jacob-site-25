@@ -3,6 +3,7 @@ import { Linkedin } from '@/components/icons/linkedin'
 import { Github } from '@/components/icons/github'
 import data from './data.json'
 import { Card } from '@/components/ui/card'
+import { Box } from '@/components/ui/box'
 
 export default function Home() {
   const { tech, work } = data
@@ -34,10 +35,10 @@ export default function Home() {
             <section className="flex flex-col gap-4">
               <h2>Tech</h2>
               <p>What I've been working with recently</p>
-              <ul className="grid grid-cols-3 gap-4">
+              <ul className="grid gap-4 md:grid-cols-3">
                 {tech.map(t => (
                   <li key={t.name}>
-                    <Card>{t.name}</Card>
+                    <Box>{t.name}</Box>
                   </li>
                 ))}
               </ul>
