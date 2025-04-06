@@ -22,6 +22,7 @@ export const Card = ({
   const mouseY = useMotionValue(0)
 
   // Global mouse position tracking
+  // TODO: check perf implications of the event listener
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const el = ref.current
