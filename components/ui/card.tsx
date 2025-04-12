@@ -11,7 +11,7 @@ export const Card = ({
     <BorderSpotlight>
       <div
         className={cn(
-          'relative z-10 rounded-lg border border-gray-800 bg-gray-950 p-4',
+          'border-bg-off bg-bg relative z-10 rounded-lg border p-4',
           className,
         )}
       >

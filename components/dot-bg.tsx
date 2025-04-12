@@ -38,12 +38,12 @@ export const DotBg = ({
     >
       <div className="pointer-events-none absolute inset-0 mask-r-from-0% mask-r-to-75%">
         {/* Dot background */}
-        <div className={`absolute inset-0 bg-gray-800 mask-[url(/dot.svg)]`} />
+        <div className={`bg-bg-off absolute inset-0 mask-[url(/dot.svg)]`} />
 
         {/* Dot spotlight mask */}
         <motion.div className="absolute inset-0 mask-[radial-gradient(200px_circle_at_var(--mouse-x)_var(--mouse-y),black_0%,transparent_100%)] opacity-0 transition duration-300 group-hover:opacity-100">
           {/* Dot accent */}
-          <motion.div className="absolute inset-0 bg-green-400 mask-[url(/dot.svg)]" />
+          <motion.div className="bg-accent absolute inset-0 mask-[url(/dot.svg)]" />
         </motion.div>
       </div>
 

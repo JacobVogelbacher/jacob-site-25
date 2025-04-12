@@ -1,5 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useMotionValue, useMotionTemplate, motion } from 'motion/react'
+
+import { cn } from '@/lib/utils'
 
 // Helper to calculate the distance to the element
 function getDistanceToEl(rect: DOMRect, x: number, y: number) {
@@ -41,18 +43,16 @@ export const BorderSpotlight = ({
     <div ref={ref} className="relative" {...props}>
       {/** Glow effect using a radial gradient */}
       <motion.div
-        className="pointer-events-none absolute -inset-px z-0 rounded-lg"
-        style={{
-          opacity: isNearby ? 1 : 0,
-          background: useMotionTemplate`
-            radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
-              #4ade80 0%,
-              transparent 80%
-            )
-          `,
-          transition: 'opacity 0.3s ease',
-        }}
+        className={cn(
+          'pointer-events-none absolute -inset-px z-0 rounded-lg bg-[radial-gradient(200px_circle_at_var(--mouse-x)_var(--mouse-y),var(--accent)_0%,transparent_80%)] transition-opacity duration-300 ease-initial',
+          isNearby ? 'opacity-100' : 'opacity-0',
+        )}
+        style={
+          {
+            '--mouse-x': useMotionTemplate`${mouseX}px`,
+            '--mouse-y': useMotionTemplate`${mouseY}px`,
+          } as React.CSSProperties
+        }
       />
 
       {children}
