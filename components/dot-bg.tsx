@@ -1,29 +1,7 @@
 'use client'
 
-import {
-  useMotionValue,
-  motion,
-  useMotionTemplate,
-  MotionValue,
-} from 'motion/react'
+import { useMotionValue, motion, useMotionTemplate } from 'motion/react'
 import { cn } from '@/lib/utils'
-
-const createMaskStyle = (x: MotionValue<number>, y: MotionValue<number>) => ({
-  WebkitMaskImage: useMotionTemplate`
-    radial-gradient(
-      200px circle at ${x}px ${y}px,
-      black 0%,
-      transparent 100%
-    )
-  `,
-  maskImage: useMotionTemplate`
-    radial-gradient(
-      200px circle at ${x}px ${y}px,
-      black 0%,
-      transparent 100%
-    )
-  `,
-})
 
 export const DotBg = ({
   children,
@@ -37,7 +15,6 @@ export const DotBg = ({
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
-  // TODO: could this make use of request animation frame?
   function handleMouseMove({
     currentTarget,
     clientX,
@@ -49,27 +26,28 @@ export const DotBg = ({
   }
 
   return (
-    <div
+    <motion.div
       className={cn('group relative w-full', containerClassName)}
       onMouseMove={handleMouseMove}
+      style={
+        {
+          '--mouse-x': useMotionTemplate`${mouseX}px`,
+          '--mouse-y': useMotionTemplate`${mouseY}px`,
+        } as React.CSSProperties
+      }
     >
       <div className="pointer-events-none absolute inset-0 mask-r-from-0% mask-r-to-75%">
-        {/* dot background */}
+        {/* Dot background */}
         <div className={`absolute inset-0 bg-gray-800 mask-[url(/dot.svg)]`} />
 
-        {/* Dot hover mask */}
-        <motion.div
-          className="absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
-          style={{
-            // spotlight mask
-            ...createMaskStyle(mouseX, mouseY),
-          }}
-        >
+        {/* Dot spotlight mask */}
+        <motion.div className="absolute inset-0 mask-[radial-gradient(200px_circle_at_var(--mouse-x)_var(--mouse-y),black_0%,transparent_100%)] opacity-0 transition duration-300 group-hover:opacity-100">
+          {/* Dot accent */}
           <motion.div className="absolute inset-0 bg-green-400 mask-[url(/dot.svg)]" />
         </motion.div>
       </div>
 
       <div className={cn('relative z-20', className)}>{children}</div>
-    </div>
+    </motion.div>
   )
 }
