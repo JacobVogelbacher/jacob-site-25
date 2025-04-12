@@ -10,7 +10,8 @@
   --font-sans: var(--font-inter), Helvetica, sans-serif;
 }
 
-/*
+@layer base {
+  /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
   looks the same as it did with Tailwind CSS v3.
@@ -18,13 +19,31 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
-@layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
+  }
+
+  body {
+    @apply bg-gray-950 font-sans text-gray-50;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading font-medium;
+  }
+
+  h1 {
+    @apply text-7xl;
+  }
+
+  h2 {
+    @apply text-5xl;
   }
 
   button:not(:disabled),
@@ -53,25 +72,4 @@
       --foreground: #ededed;
     }
   } */
-}
-
-@layer base {
-  body {
-    @apply bg-gray-950 font-sans text-gray-50;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-heading font-medium;
-  }
-
-  h1 {
-    @apply text-7xl;
-  }
-
-  h2 {
-    @apply text-5xl;
-  }
 }
