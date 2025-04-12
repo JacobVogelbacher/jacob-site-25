@@ -1,4 +1,4 @@
-import { GlowingEffect } from './glowing-effect'
+import { GlowingEffect } from '../glowing-effect'
 
 export const Box = ({
   children,
