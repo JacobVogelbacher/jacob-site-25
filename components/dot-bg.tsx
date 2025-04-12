@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import {
   useMotionValue,
   motion,
@@ -8,23 +7,6 @@ import {
   MotionValue,
 } from 'motion/react'
 import { cn } from '@/lib/utils'
-
-const createDotPattern = (color: string) => {
-  return `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'><circle fill='${color}' cx='10' cy='10' r='2.5' /></svg>`,
-  )}")`
-}
-
-const dotPatterns = {
-  light: {
-    default: createDotPattern('#d4d4d4'),
-    hover: createDotPattern('#6366f1'),
-  },
-  dark: {
-    default: createDotPattern('oklch(21% 0.034 264.665)'),
-    hover: createDotPattern('oklch(79.2% 0.209 151.711)'),
-  },
-}
 
 const createMaskStyle = (x: MotionValue<number>, y: MotionValue<number>) => ({
   WebkitMaskImage: useMotionTemplate`
@@ -55,6 +37,7 @@ export const DotBg = ({
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
+  // TODO: could this make use of request animation frame?
   function handleMouseMove({
     currentTarget,
     clientX,
@@ -70,39 +53,21 @@ export const DotBg = ({
       className={cn('group relative w-full', containerClassName)}
       onMouseMove={handleMouseMove}
     >
-      {/* Light mode background */}
-      <div
-        className="pointer-events-none absolute inset-0 dark:hidden"
-        style={{
-          backgroundImage: dotPatterns.light.default,
-        }}
-      />
-      {/* Dark mode background */}
-      <div
-        className="pointer-events-none absolute inset-0 hidden dark:block"
-        style={{
-          backgroundImage: dotPatterns.dark.default,
-        }}
-      />
-      {/* Hover light mask */}
-      <motion.div
-        className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 dark:hidden"
-        style={{
-          backgroundImage: dotPatterns.light.hover,
-          ...createMaskStyle(mouseX, mouseY),
-        }}
-      />
-      {/* Hover dark mask */}
-      <motion.div
-        className="pointer-events-none absolute inset-0 hidden opacity-0 transition duration-300 group-hover:opacity-100 dark:block"
-        style={{
-          backgroundImage: dotPatterns.dark.hover,
-          ...createMaskStyle(mouseX, mouseY),
-        }}
-      />
+      <div className="pointer-events-none absolute inset-0 mask-r-from-0% mask-r-to-75%">
+        {/* dot background */}
+        <div className={`absolute inset-0 bg-gray-800 mask-[url(/dot.svg)]`} />
 
-      {/* gradient overlay, so the effect isn't as visible on the right side of viewport */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-950 to-75%" />
+        {/* Dot hover mask */}
+        <motion.div
+          className="absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
+          style={{
+            // spotlight mask
+            ...createMaskStyle(mouseX, mouseY),
+          }}
+        >
+          <motion.div className="absolute inset-0 bg-green-400 mask-[url(/dot.svg)]" />
+        </motion.div>
+      </div>
 
       <div className={cn('relative z-20', className)}>{children}</div>
     </div>
