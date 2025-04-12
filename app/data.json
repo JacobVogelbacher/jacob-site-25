@@ -23,6 +23,9 @@
     },
     {
       "name": "Cypress"
+    },
+    {
+      "name": "AWS"
     }
   ],
   "work": [
@@ -36,6 +39,14 @@
     },
     {
       "name": "FCR",
+      "url": "#!"
+    },
+    {
+      "name": "NDL",
+      "url": "#!"
+    },
+    {
+      "name": "NOB",
       "url": "#!"
     },
     {
