@@ -18,7 +18,15 @@ export default function Home() {
               <h1>
                 Jacob <br /> Vogelbacher
               </h1>
-              <p>Full-stack Engineer</p>
+              <div className="flex flex-col gap-3">
+                <p className="font-heading text-2xl font-medium">
+                  Full-stack Engineer
+                </p>
+                <p className="max-w-[35ch]">
+                  Automating business processes and building pixel-perfect
+                  experiences on the web.
+                </p>
+              </div>
             </div>
             <div className="flex items-center gap-4">
               <a
