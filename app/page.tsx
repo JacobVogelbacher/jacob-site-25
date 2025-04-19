@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Linkedin } from '@/components/icons/linkedin'
 import { Github } from '@/components/icons/github'
-import data from './data.json'
+import { data } from './data'
 import { Card } from '@/components/ui/card'
 import { Box } from '@/components/ui/box'
 import { DotBg } from '@/components/dot-bg'
