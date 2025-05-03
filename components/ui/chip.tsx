@@ -10,7 +10,7 @@ export const Chip = ({
   return (
     <div
       className={cn(
-        'text-accent bg-accent-dark rounded-lg px-2 py-1 text-xs font-medium',
+        'text-accent bg-accent-bg rounded-lg px-2 py-1 text-xs font-medium',
         className,
       )}
       {...props}

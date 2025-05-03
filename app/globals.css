@@ -7,30 +7,33 @@
     --foreground: var(--color-gray-50);
 
     --accent: var(--color-green-400);
-    --accent-dark: var(--color-green-950);
+    --accent-bg: var(--color-green-950);
   }
 
   [data-accent='red'] {
     --accent: var(--color-red-400);
-    --accent-dark: var(--color-red-950);
+    --accent-bg: var(--color-red-950);
   }
   [data-accent='sky'] {
     --accent: var(--color-sky-400);
-    --accent-dark: var(--color-sky-950);
+    --accent-bg: var(--color-sky-950);
   }
 
   [data-theme='light'] {
     --background: var(--color-green-50);
     --background-off: var(--color-green-200);
     --foreground: var(--color-gray-950);
+    --accent-bg: var(--color-green-100);
 
     &[data-accent='red'] {
       --background: var(--color-red-50);
       --background-off: var(--color-red-200);
+      --accent-bg: var(--color-red-100);
     }
     &[data-accent='sky'] {
       --background: var(--color-sky-50);
       --background-off: var(--color-sky-200);
+      --accent-bg: var(--color-sky-100);
     }
   }
 }
@@ -41,7 +44,7 @@
   --color-fg: var(--foreground);
 
   --color-accent: var(--accent);
-  --color-accent-dark: var(--accent-dark);
+  --color-accent-bg: var(--accent-bg);
 }
 
 @theme inline {
