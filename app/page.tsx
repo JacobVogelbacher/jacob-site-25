@@ -132,18 +132,6 @@ export default function Home() {
                 ))}
               </ul>
             </section>
-
-            <section className="flex flex-col gap-4">
-              <h2>Experience</h2>
-              <ul>
-                <li>
-                  <a href="#">BV - Sr Dev</a>
-                </li>
-                <li>
-                  <a href="#">Etc.</a>
-                </li>
-              </ul>
-            </section>
           </main>
         </div>
       </div>
