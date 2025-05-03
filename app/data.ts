@@ -2,30 +2,39 @@ export const data = {
   tech: [
     {
       name: 'React',
+      icon: 'react' as const,
     },
     {
       name: 'TypeScript',
+      icon: 'typescript' as const,
     },
     {
       name: 'Next.js',
+      icon: 'nextjs' as const,
     },
     {
       name: 'Tailwind',
+      icon: 'tailwind' as const,
     },
     {
       name: 'Supabase',
+      icon: 'supabase' as const,
     },
     {
       name: 'Sanity',
+      icon: 'sanity' as const,
     },
     {
       name: 'WordPress',
+      icon: 'wordpress' as const,
     },
     {
       name: 'Cypress',
+      icon: 'cypress' as const,
     },
     {
       name: 'AWS',
+      icon: 'aws' as const,
     },
   ],
   work: [

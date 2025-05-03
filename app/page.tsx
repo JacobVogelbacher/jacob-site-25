@@ -3,6 +3,7 @@ import { Briefcase } from 'lucide-react'
 import { data } from './data'
 import { Linkedin } from '@/components/icons/linkedin'
 import { Github } from '@/components/icons/github'
+
 import { Icon } from '@/components/icon'
 import {
   Card,
@@ -50,6 +51,7 @@ export default function Home() {
               </a>
             </div>
           </header>
+
           <main className="col-span-full flex flex-col gap-12 pb-10 lg:col-span-6 lg:py-16">
             <section className="flex flex-col gap-6">
               <div className="flex flex-col gap-4">
@@ -57,14 +59,23 @@ export default function Home() {
                 <p>What I&apos;ve been working with recently</p>
               </div>
               <ul className="grid gap-4 md:grid-cols-3">
-                {tech.map(t => (
-                  <li key={t.name}>
-                    {/* // TODO: maybe use the Card component for these as well */}
-                    <Box>{t.name}</Box>
+                {tech.map(techItem => (
+                  <li key={techItem.name}>
+                    <Box>
+                      {techItem.name}
+
+                      <div className="absolute inset-[5%] z-[-1] flex scale-50 items-center justify-center opacity-10 transition-all duration-200 group-hover/box:scale-100 group-hover/box:opacity-20">
+                        <Icon
+                          type={techItem.icon}
+                          className="text-accent max-h-full w-auto"
+                        />
+                      </div>
+                    </Box>
                   </li>
                 ))}
               </ul>
             </section>
+
             <section className="flex flex-col gap-6">
               <h2>Work</h2>
               <ul className="flex flex-col gap-6">
