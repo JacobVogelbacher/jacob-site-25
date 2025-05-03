@@ -7,13 +7,16 @@
     --foreground: var(--color-gray-50);
 
     --accent: var(--color-green-400);
+    --accent-dark: var(--color-green-950);
   }
 
   [data-accent='red'] {
     --accent: var(--color-red-400);
+    --accent-dark: var(--color-red-950);
   }
   [data-accent='sky'] {
     --accent: var(--color-sky-400);
+    --accent-dark: var(--color-sky-950);
   }
 
   [data-theme='light'] {
@@ -38,6 +41,7 @@
   --color-fg: var(--foreground);
 
   --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
 }
 
 @theme inline {
