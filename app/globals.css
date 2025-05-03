@@ -85,6 +85,11 @@
   [role='button']:not(:disabled) {
     cursor: pointer;
   }
+
+  a,
+  button {
+    @apply outline-accent outline-offset-2 focus:outline-2;
+  }
 }
 
 @utility cell {
