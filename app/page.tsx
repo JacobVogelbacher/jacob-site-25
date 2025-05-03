@@ -1,10 +1,20 @@
-import Image from 'next/image'
+import { Briefcase } from 'lucide-react'
+
+import { data } from './data'
 import { Linkedin } from '@/components/icons/linkedin'
 import { Github } from '@/components/icons/github'
-import { data } from './data'
-import { Card } from '@/components/ui/card'
+import { Icon } from '@/components/icon'
+import {
+  Card,
+  CardContent,
+  CardIcon,
+  CardInner,
+  CardText,
+  CardTitleLink,
+} from '@/components/ui/card'
 import { Box } from '@/components/ui/box'
 import { DotBg } from '@/components/dot-bg'
+import { Chip } from '@/components/ui/chip'
 
 export default function Home() {
   const { tech, work } = data
@@ -40,10 +50,12 @@ export default function Home() {
               </a>
             </div>
           </header>
-          <main className="col-span-full flex flex-col gap-10 pb-10 lg:col-span-6 lg:py-16">
-            <section className="flex flex-col gap-4">
-              <h2>Tech</h2>
-              <p>What I've been working with recently</p>
+          <main className="col-span-full flex flex-col gap-12 pb-10 lg:col-span-6 lg:py-16">
+            <section className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <h2>Tech</h2>
+                <p>What I&apos;ve been working with recently</p>
+              </div>
               <ul className="grid gap-4 md:grid-cols-3">
                 {tech.map(t => (
                   <li key={t.name}>
@@ -53,18 +65,74 @@ export default function Home() {
                 ))}
               </ul>
             </section>
-            <section className="flex flex-col gap-4">
+            <section className="flex flex-col gap-6">
               <h2>Work</h2>
-              <ul className="flex flex-col gap-4">
-                {work.map(w => (
-                  <li key={w.name}>
+              <ul className="flex flex-col gap-6">
+                {work.map(workItem => (
+                  <li key={workItem.name}>
                     <Card>
-                      <a href={w.url}>{w.name}</a>
+                      <CardInner>
+                        {workItem.icon ? (
+                          <CardIcon>
+                            <Icon
+                              type={workItem.icon}
+                              className="size-9"
+                              strokeWidth={1}
+                            />
+                          </CardIcon>
+                        ) : null}
+
+                        <CardContent>
+                          <CardTitleLink href={workItem.url}>
+                            {workItem.name}
+                          </CardTitleLink>
+
+                          {workItem.tech?.length ? (
+                            <ul className="flex flex-wrap gap-2">
+                              {workItem.tech.map(tech => (
+                                <li key={tech}>
+                                  <Chip>{tech}</Chip>
+                                </li>
+                              ))}
+                            </ul>
+                          ) : null}
+
+                          <CardText>
+                            {workItem.description ? (
+                              <p>{workItem.description}</p>
+                            ) : null}
+
+                            {workItem.details?.length ? (
+                              <ul className="list-disc pl-5 text-sm">
+                                {workItem.details.map(detail => (
+                                  <li key={detail}>{detail}</li>
+                                ))}
+                              </ul>
+                            ) : null}
+
+                            {workItem.attribution ? (
+                              <p className="text-rightxx leading-tightzz mt-2 inline-flex items-center gap-2 text-xs opacity-50">
+                                <Briefcase className="size-4" />
+                                Made with {workItem.attribution}
+                              </p>
+                            ) : null}
+                          </CardText>
+                        </CardContent>
+                      </CardInner>
+
+                      {workItem.icon ? (
+                        <Icon
+                          type={workItem.icon}
+                          className="text-accent absolute top-0 right-0 z-[-1] size-[200px] opacity-5"
+                          strokeWidth={1}
+                        />
+                      ) : null}
                     </Card>
                   </li>
                 ))}
               </ul>
             </section>
+
             <section className="flex flex-col gap-4">
               <h2>Experience</h2>
               <ul>
