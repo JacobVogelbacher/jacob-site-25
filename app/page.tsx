@@ -42,41 +42,36 @@ export default function Home() {
                   experiences on the web.
                 </p>
               </div>
-              <div className="flex items-center gap-6">
-                <IconLink asChild>
-                  <a
-                    href="mailto:jacob"
-                    target="_blank"
-                    aria-label="Email Jacob"
-                    title="Email Me"
-                    onClick={e => {
-                      e.preventDefault()
-
-                      // obfuscate the email address for bot scraper protection
-                      const emailName = 'jacobvogelbacher'
-                      const emailDomain = 'gmail.com'
-                      window.open(`mailto:${emailName}@${emailDomain}`)
-                    }}
-                  >
-                    <Mail />
-                  </a>
-                </IconLink>
-                <IconLink asChild>
-                  <a
-                    href="https://www.linkedin.com/in/jacobvogelbacher/"
-                    target="_blank"
-                    aria-label="LinkedIn"
-                    title="LinkedIn"
-                  >
-                    <Linkedin />
-                  </a>
-                </IconLink>
-              </div>
             </div>
-            <div className="flex items-center gap-4">
-              <a href="https://github.com/JacobVogelbacher/" target="_blank">
-                <Github />
-              </a>
+            <div className="flex items-center gap-6">
+              <IconLink asChild>
+                <a
+                  href="mailto:jacob"
+                  target="_blank"
+                  aria-label="Email Jacob"
+                  title="Email Me"
+                  onClick={e => {
+                    e.preventDefault()
+
+                    // obfuscate the email address for bot scraper protection
+                    const emailName = 'jacobvogelbacher'
+                    const emailDomain = 'gmail.com'
+                    window.open(`mailto:${emailName}@${emailDomain}`)
+                  }}
+                >
+                  <Mail />
+                </a>
+              </IconLink>
+              <IconLink asChild>
+                <a
+                  href="https://www.linkedin.com/in/jacobvogelbacher/"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
+                >
+                  <Linkedin />
+                </a>
+              </IconLink>
             </div>
           </header>
 
