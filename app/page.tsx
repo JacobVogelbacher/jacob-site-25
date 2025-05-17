@@ -9,8 +9,9 @@ import {
   CardContent,
   CardIcon,
   CardInner,
+  CardLink,
   CardText,
-  CardTitleLink,
+  CardTitle,
 } from '@/components/ui/card'
 import { Box } from '@/components/ui/box'
 import { DotBg } from '@/components/dot-bg'
@@ -88,9 +89,15 @@ export default function Home() {
                         ) : null}
 
                         <CardContent>
-                          <CardTitleLink href={workItem.url}>
-                            {workItem.name}
-                          </CardTitleLink>
+                          <CardTitle>
+                            {workItem.url ? (
+                              <CardLink href={workItem.url}>
+                                {workItem.name}
+                              </CardLink>
+                            ) : (
+                              workItem.name
+                            )}
+                          </CardTitle>
 
                           {workItem.tech?.length ? (
                             <ul className="flex flex-wrap gap-2">

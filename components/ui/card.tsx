@@ -109,20 +109,3 @@ export const CardLink = ({
     </a>
   )
 }
-
-export const CardTitleLink = ({
-  href,
-  children,
-  className,
-  ...props
-}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
-  return href ? (
-    <CardTitle className={className}>
-      <CardLink href={href} {...props}>
-        {children}
-      </CardLink>
-    </CardTitle>
-  ) : (
-    <CardTitle className={className}>{children}</CardTitle>
-  )
-}
