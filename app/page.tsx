@@ -18,6 +18,7 @@ import {
 import { Box } from '@/components/ui/box'
 import { DotBg } from '@/components/dot-bg'
 import { Chip } from '@/components/ui/chip'
+import { IconLink } from '@/components/icon-link'
 
 export default function Home() {
   const { tech, work } = data
@@ -41,30 +42,34 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex items-center gap-6">
-                <a
-                  href="mailto:jacob"
-                  target="_blank"
-                  aria-label="Email Jacob"
-                  title="Email Me"
-                  onClick={e => {
-                    e.preventDefault()
+                <IconLink asChild>
+                  <a
+                    href="mailto:jacob"
+                    target="_blank"
+                    aria-label="Email Jacob"
+                    title="Email Me"
+                    onClick={e => {
+                      e.preventDefault()
 
-                    // obfuscate the email address for bot scraper protection
-                    const emailName = 'jacobvogelbacher'
-                    const emailDomain = 'gmail.com'
-                    window.open(`mailto:${emailName}@${emailDomain}`)
-                  }}
-                >
-                  <Mail />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/jacobvogelbacher/"
-                  target="_blank"
-                  aria-label="LinkedIn"
-                  title="LinkedIn"
-                >
-                  <Linkedin />
-                </a>
+                      // obfuscate the email address for bot scraper protection
+                      const emailName = 'jacobvogelbacher'
+                      const emailDomain = 'gmail.com'
+                      window.open(`mailto:${emailName}@${emailDomain}`)
+                    }}
+                  >
+                    <Mail />
+                  </a>
+                </IconLink>
+                <IconLink asChild>
+                  <a
+                    href="https://www.linkedin.com/in/jacobvogelbacher/"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                    title="LinkedIn"
+                  >
+                    <Linkedin />
+                  </a>
+                </IconLink>
               </div>
             </div>
             <div className="flex items-center gap-4">
