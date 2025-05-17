@@ -76,11 +76,13 @@ export default function Home() {
             </section>
 
             <section className="flex flex-col gap-6">
-              <h2>Work</h2>
-              <p>
-                I build software solutions that empower brands to reach their
-                fullest potential.
-              </p>
+              <div className="flex flex-col gap-4">
+                <h2>Work</h2>
+                <p>
+                  I build software solutions that empower brands to reach their
+                  fullest potential.
+                </p>
+              </div>
               <ul className="flex flex-col gap-6">
                 {work.map(workItem => (
                   <li key={workItem.name}>
