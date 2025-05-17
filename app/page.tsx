@@ -4,7 +4,6 @@ import { data } from './data'
 import { Linkedin } from '@/components/icons/linkedin'
 import { Github } from '@/components/icons/github'
 
-import { Icon } from '@/components/icon'
 import {
   Card,
   CardContent,
@@ -64,12 +63,11 @@ export default function Home() {
                     <Box>
                       {techItem.name}
 
-                      <div className="absolute inset-[5%] z-[-1] flex scale-50 items-center justify-center opacity-10 transition-all duration-200 group-hover/box:scale-100 group-hover/box:opacity-20">
-                        <Icon
-                          type={techItem.icon}
-                          className="text-accent max-h-full w-auto"
-                        />
-                      </div>
+                      {techItem.icon ? (
+                        <div className="absolute inset-[5%] z-[-1] flex scale-50 items-center justify-center opacity-10 transition-all duration-200 group-hover/box:scale-100 group-hover/box:opacity-20">
+                          <techItem.icon className="text-accent max-h-full w-auto" />
+                        </div>
+                      ) : null}
                     </Box>
                   </li>
                 ))}
@@ -85,11 +83,7 @@ export default function Home() {
                       <CardInner>
                         {workItem.icon ? (
                           <CardIcon>
-                            <Icon
-                              type={workItem.icon}
-                              className="size-9"
-                              strokeWidth={1}
-                            />
+                            <workItem.icon className="size-9" strokeWidth={1} />
                           </CardIcon>
                         ) : null}
 
@@ -132,8 +126,7 @@ export default function Home() {
                       </CardInner>
 
                       {workItem.icon ? (
-                        <Icon
-                          type={workItem.icon}
+                        <workItem.icon
                           className="text-accent absolute top-0 right-0 z-[-1] size-[200px] opacity-5"
                           strokeWidth={1}
                         />

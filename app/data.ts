@@ -1,40 +1,59 @@
+import {
+  DraftingCompass,
+  Gavel,
+  KeySquare,
+  Microscope,
+  Paintbrush,
+  User,
+} from 'lucide-react'
+
+import { ReactIcon } from '@/components/icons/react'
+import { TypeScript } from '@/components/icons/typescript'
+import { Nextjs } from '@/components/icons/nextjs'
+import { Tailwind } from '@/components/icons/tailwind'
+import { Supabase } from '@/components/icons/supabase'
+import { Sanity } from '@/components/icons/sanity'
+import { WordPress } from '@/components/icons/wordpress'
+import { Cypress } from '@/components/icons/cypress'
+import { AWS } from '@/components/icons/aws'
+
 export const data = {
   tech: [
     {
       name: 'React',
-      icon: 'react' as const,
+      icon: ReactIcon,
     },
     {
       name: 'TypeScript',
-      icon: 'typescript' as const,
+      icon: TypeScript,
     },
     {
       name: 'Next.js',
-      icon: 'nextjs' as const,
+      icon: Nextjs,
     },
     {
       name: 'Tailwind',
-      icon: 'tailwind' as const,
+      icon: Tailwind,
     },
     {
       name: 'Supabase',
-      icon: 'supabase' as const,
+      icon: Supabase,
     },
     {
       name: 'Sanity',
-      icon: 'sanity' as const,
+      icon: Sanity,
     },
     {
       name: 'WordPress',
-      icon: 'wordpress' as const,
+      icon: WordPress,
     },
     {
       name: 'Cypress',
-      icon: 'cypress' as const,
+      icon: Cypress,
     },
     {
       name: 'AWS',
-      icon: 'aws' as const,
+      icon: AWS,
     },
   ],
   work: [
@@ -53,7 +72,7 @@ export const data = {
       description:
         'Internal portal to simplify workflows and enhance productivity for over 20,000 members.',
       details: ['Integrated with payment processing service.'],
-      icon: 'key' as const,
+      icon: KeySquare,
     },
     {
       name: 'Fracture Product Customizer',
@@ -72,7 +91,7 @@ export const data = {
         'Multi-repo project with reusable library of shared functionality.',
         'Custom image editing logic.',
       ],
-      icon: 'brush' as const,
+      icon: Paintbrush,
       attribution: 'Big Vision',
     },
     {
@@ -89,7 +108,7 @@ export const data = {
       description:
         'Clinical research company website with custom WordPress theme.',
       details: ['Multilingual content delivery.'],
-      // icon: 'stethoscope' as const,
+      icon: Microscope,
       attribution: 'Big Vision',
     },
     // {
@@ -112,6 +131,7 @@ export const data = {
         'Content migration from existing WordPress site.',
         'Massive media library with categorical organization and attributions.',
       ],
+      icon: DraftingCompass,
       attribution: 'Big Vision',
     },
     {
@@ -123,6 +143,7 @@ export const data = {
         'Content migration from over a decade of XML data.',
         'Global fuzzy search bar.',
       ],
+      icon: Gavel,
       attribution: 'Big Vision',
     },
     // {
@@ -136,6 +157,7 @@ export const data = {
       tech: ['Next.js', 'TypeScript', 'Tailwind', 'Vercel'],
       description: "The website you're looking at now.",
       details: ['Check out my code on GitHub.'],
+      icon: User,
     },
   ],
 }
