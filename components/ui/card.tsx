@@ -103,7 +103,7 @@ export const CardLink = ({
       {children}
 
       <ExternalLink
-        className="group-hover/link:text-accent size-4 transition-colors duration-300"
+        className="group-hover/link:text-accent size-4 opacity-50 transition-all duration-300 group-hover/link:opacity-100"
         strokeWidth={1}
       />
     </a>
