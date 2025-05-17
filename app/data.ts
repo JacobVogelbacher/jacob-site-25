@@ -76,28 +76,66 @@ export const data = {
       attribution: 'Big Vision',
     },
     {
-      name: 'NDL',
-      url: '#!',
+      name: 'Charter Research',
+      url: 'https://www.charterresearch.com/',
+      tech: [
+        'WordPress',
+        'Internationalization',
+        'SCSS',
+        'ACF',
+        'Gulp',
+        'Accessibility',
+      ],
+      description:
+        'Clinical research company website with custom WordPress theme.',
+      details: ['Multilingual content delivery.'],
+      // icon: 'stethoscope' as const,
+      attribution: 'Big Vision',
     },
     // {
     //   "name": "NOB",
     //   "url": "#!"
     // },
     {
-      name: 'CTR',
-      url: '#!',
+      name: 'TLC Engineering',
+      url: 'https://tlc-engineers.com/',
+      tech: [
+        'WordPress',
+        'SCSS',
+        'ACF',
+        'Google Maps API',
+        'Gulp',
+        'Accessibility',
+      ],
+      description: 'Engineering firm website with custom WordPress theme.',
+      details: [
+        'Content migration from existing WordPress site.',
+        'Massive media library with categorical organization and attributions.',
+      ],
+      attribution: 'Big Vision',
     },
     {
-      name: 'TLC',
-      url: '#!',
+      name: 'Rumberger Kirk',
+      url: 'https://www.rumberger.com/',
+      tech: ['WordPress', 'SCSS', 'jQuery', 'ACF', 'Gulp', 'Accessibility'],
+      description: 'Law firm website with custom WordPress theme.',
+      details: [
+        'Content migration from over a decade of XML data.',
+        'Global fuzzy search bar.',
+      ],
+      attribution: 'Big Vision',
     },
-    {
-      name: 'RKC',
-      url: '#!',
-    },
+    // {
+    //   name: 'NDL',
+    //   // Law firm website with custom WordPress theme.
+    //   url: '#!',
+    // },
     {
       name: 'Personal Site',
-      url: '#!',
+      url: 'https://github.com/JacobVogelbacher/jacob-site-25',
+      tech: ['Next.js', 'TypeScript', 'Tailwind', 'Vercel'],
+      description: "The website you're looking at now.",
+      details: ['Check out my code on GitHub.'],
     },
   ],
 }
