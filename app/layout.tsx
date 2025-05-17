@@ -27,6 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark" data-accent="green">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Jacob Vogelbacher" />
+      </head>
       <body className={`${inter.variable} ${quicksand.variable} antialiased`}>
         {children}
       </body>
