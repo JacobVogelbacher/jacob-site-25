@@ -19,6 +19,7 @@ import { Box } from '@/components/ui/box'
 import { DotBg } from '@/components/dot-bg'
 import { Chip } from '@/components/ui/chip'
 import { IconLink } from '@/components/icon-link'
+import { AsciiArt } from '@/components/ascii-art'
 
 export default function Home() {
   const { tech, work } = data
@@ -179,6 +180,8 @@ export default function Home() {
           </main>
         </div>
       </div>
+
+      <AsciiArt />
     </DotBg>
   )
 }
