@@ -34,7 +34,7 @@ export default function Home() {
                   Full-stack Engineer
                 </p>
                 <p className="max-w-[35ch]">
-                  Automating business processes and building pixel-perfect
+                  Automating business processes and crafting pixel-perfect
                   experiences on the web.
                 </p>
               </div>
@@ -56,7 +56,7 @@ export default function Home() {
             <section className="flex flex-col gap-6">
               <div className="flex flex-col gap-4">
                 <h2>Tech</h2>
-                <p>What I&apos;ve been working with recently</p>
+                <p>What I&apos;ve been building with recently.</p>
               </div>
               <ul className="grid gap-4 md:grid-cols-3">
                 {tech.map(techItem => (
@@ -77,6 +77,10 @@ export default function Home() {
 
             <section className="flex flex-col gap-6">
               <h2>Work</h2>
+              <p>
+                I build software solutions that empower brands to reach their
+                fullest potential.
+              </p>
               <ul className="flex flex-col gap-6">
                 {work.map(workItem => (
                   <li key={workItem.name}>
