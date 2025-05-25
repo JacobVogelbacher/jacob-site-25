@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Quicksand, Inter } from 'next/font/google'
+import { GoogleTagManager } from '@next/third-parties/google'
+
 import './globals.css'
 
 const quicksand = Quicksand({
@@ -30,6 +32,8 @@ export default function RootLayout({
       <head>
         <meta name="apple-mobile-web-app-title" content="Jacob Vogelbacher" />
       </head>
+      <GoogleTagManager gtmId="GTM-W7NJ8G6R" />
+
       <body className={`${inter.variable} ${quicksand.variable} antialiased`}>
         {children}
       </body>
