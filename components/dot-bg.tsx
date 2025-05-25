@@ -36,7 +36,9 @@ export const DotBg = ({
         } as React.CSSProperties
       }
     >
-      <div className="pointer-events-none absolute inset-0 mask-r-from-0% mask-r-to-75%">
+      {/* Overall background mask */}
+      {/* - mask out the right side on desktop so the dots are less distracting around the cards */}
+      <div className="pointer-events-none absolute inset-0 lg:mask-r-from-0% lg:mask-r-to-75%">
         {/* Dot background */}
         <div className={`bg-bg-off absolute inset-0 mask-[url(/dot.svg)]`} />
 
