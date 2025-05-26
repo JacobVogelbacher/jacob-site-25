@@ -81,7 +81,7 @@ export default function Home() {
                 <h2>Tech</h2>
                 <p>What I&apos;ve been building with recently.</p>
               </div>
-              <ul className="grid gap-4 md:grid-cols-3">
+              <ul className="grid grid-cols-2 gap-4 md:grid-cols-3">
                 {tech.map(techItem => (
                   <li key={techItem.name}>
                     <Box>

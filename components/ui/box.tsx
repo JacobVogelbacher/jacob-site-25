@@ -12,7 +12,7 @@ export const Box = ({
     <BorderSpotlight>
       <div
         className={cn(
-          'group/box border-bg-off bg-bg relative z-[1] flex aspect-[2/1] items-center justify-center overflow-hidden rounded-lg border p-4 font-semibold',
+          'group/box border-bg-off bg-bg relative z-[1] flex aspect-square items-center justify-center overflow-hidden rounded-lg border p-4 font-semibold md:aspect-video lg:aspect-square xl:aspect-[2/1]',
           className,
         )}
         {...props}
