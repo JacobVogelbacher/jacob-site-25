@@ -30,7 +30,13 @@ export const CardInner = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className={cn(`flex items-start gap-4`, className)} {...props}>
+    <div
+      className={cn(
+        `flex flex-wrap items-center gap-4 md:grid md:grid-cols-[auto_1fr]`,
+        className,
+      )}
+      {...props}
+    >
       {children}
     </div>
   )
@@ -42,7 +48,10 @@ export const CardContent = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className={cn(`flex grow flex-col gap-3`, className)} {...props}>
+    <div
+      className={cn(`flex grow flex-col gap-3 md:col-start-2`, className)}
+      {...props}
+    >
       {children}
     </div>
   )
@@ -54,7 +63,14 @@ export const CardTitle = ({
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) => {
   return (
-    <h3 className={cn(`text-xl font-semibold`, className)} {...props}>
+    <h3
+      // max-width on mobile to keep the title on the top line with the icon
+      className={cn(
+        `max-w-[83%] text-xl font-semibold md:max-w-none`,
+        className,
+      )}
+      {...props}
+    >
       {children}
     </h3>
   )
@@ -78,7 +94,7 @@ export const CardIcon = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className={cn(`mt-1 shrink-0`, className)} {...props}>
+    <div className={cn(`shrink-0`, className)} {...props}>
       {children}
     </div>
   )
@@ -103,7 +119,7 @@ export const CardLink = ({
       {children}
 
       <ExternalLink
-        className="group-hover/link:text-accent size-4 opacity-50 transition-all duration-300 group-hover/link:opacity-100"
+        className="group-hover/link:text-accent size-4 shrink-0 opacity-50 transition-all duration-300 group-hover/link:opacity-100"
         strokeWidth={1}
       />
     </a>

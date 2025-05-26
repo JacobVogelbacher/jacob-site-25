@@ -117,17 +117,17 @@ export default function Home() {
                           </CardIcon>
                         ) : null}
 
-                        <CardContent>
-                          <CardTitle>
-                            {workItem.url ? (
-                              <CardLink href={workItem.url}>
-                                {workItem.name}
-                              </CardLink>
-                            ) : (
-                              workItem.name
-                            )}
-                          </CardTitle>
+                        <CardTitle>
+                          {workItem.url ? (
+                            <CardLink href={workItem.url}>
+                              {workItem.name}
+                            </CardLink>
+                          ) : (
+                            workItem.name
+                          )}
+                        </CardTitle>
 
+                        <CardContent>
                           {workItem.tech?.length ? (
                             <ul className="flex flex-wrap gap-2">
                               {workItem.tech.map(tech => (
